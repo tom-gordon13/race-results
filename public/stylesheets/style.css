@@ -1,6 +1,8 @@
 body {
-  padding: 50px;
-  font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
+  font: 14px; 
+  font-family: 'Play', sans-serif;
+  display: flex;
+  flex-direction: column;
 }
 
 a {
@@ -16,4 +18,42 @@ a {
 
 .login img {
   height: 30px;
+}
+
+nav {
+  /* background-color: rgba(217, 27, 27, 0.906); */
+  border-bottom: 1px solid rgba(219, 213, 213, 0.496);
+  display: flex;
+  width: 100%;
+  height: 8vmax;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  
+}
+
+nav > a {
+  text-decoration: none;
+}
+
+h1 {
+  display: block;
+}
+
+#nav-left {
+  font-size: 350%;
+  font-weight: 700;
+  color: #6a56ac;
+  /* text-decoration: none; */
+}
+
+#nav-right > a{
+  font-size: 120%;
+  margin-left: 15px;
+  text-decoration: none;
+  color: #6a56ac;
+}
+
+.login {
+
 }

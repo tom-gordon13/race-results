@@ -1,0 +1,13 @@
+<nav>
+    <a href='/' id='nav-left'>Keppa</a>
+    <div id='nav-right'>
+    <% if (user) { %>
+        <a href='../results/index'>See All Results</a>
+        <a href='../results/new'>Add New Result</a>
+        <a href=''>My Profile</a>
+        <a href='/logout'>LOG OUT</a>
+      <% } else { %>
+        <a href='/auth/google' class='login'>LOG IN&nbsp;<img src='https://i.imgur.com/FHjYyi0.png'></a>
+        <% } %> 
+    </div>
+</nav>
