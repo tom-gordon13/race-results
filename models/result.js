@@ -12,9 +12,8 @@ const resultsSchema = new Schema({
     finishTime: {
         type: String,
     }, 
-    resultDate: {type: Date, default: new Date(), require: true},
-    race: {type: Schema.Types.ObjectId, required: true}
-
+    race: {type: Schema.Types.ObjectId, required: true},
+    place: Number
 })
 
 module.exports = mongoose.model('Result', resultsSchema);
