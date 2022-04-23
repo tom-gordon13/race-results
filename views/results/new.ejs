@@ -1,3 +1,55 @@
 <%- include('../partials/header.ejs') -%> 
-    <h1><%= title %> </h1>
+
+ 
+
+<% const distanceArr = ['1 Mile', '5k', '10k', 'Half Marathon', 'Marathon', 'Other'] %> 
+ 
+
+<form id='new-resul-form' action='/results' method='POST'>
+    <h1 class='title'><%= title %> </h1>
+    
+    <div>
+        <label>Race Name:
+            <input type='text'>
+        </label>
+
+        <label>Race Date:
+            <input type='date'>
+        </label>
+    </div>      
+    
+    <div>
+        <label>Distance:
+            <select name='distance'>
+                <option>--</option>
+                <% arrays.distanceArr.forEach(dist => { %> 
+                <option value='<%= dist %>'><%= dist %></option>
+                <% }); %>
+            </select>
+        </label>
+        
+        <label>Finish Time:
+            <input type='text'>
+        </label>
+    </div>
+
+    <label>Place:
+        <input type='text'>
+    </label>
+
+    <label>Focus:
+        <select name='focus'>
+            <option>--</option>
+            <% arrays.focusArr.forEach(focus => { %> 
+            <option value='<%= focus %>'><%= focus %></option>
+            <% }); %>
+        </select>
+    </label>
+
+    <label>Additional Comments:
+        <input type='text' class='comment-box'>
+    </label>
+
+    <button type='submit'>Add Result</button>
+</form>
 <%- include('../partials/footer.ejs') -%>

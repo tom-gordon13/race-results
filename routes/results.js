@@ -10,4 +10,7 @@ router.get('/index', isLoggedIn, resultsCtrl.index);
 // NEW /results
 router.get('/new', isLoggedIn, resultsCtrl.new);
 
+// CREATE /results
+router.post('/', isLoggedIn, resultsCtrl.create);
+
 module.exports = router;

@@ -58,3 +58,23 @@ h1 {
 .login {
 
 }
+
+form {
+  align-self: center;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 40%;
+  border: 2px solid black;
+  margin-top: 3.5%;
+}
+
+form > label, div {
+  margin: 10px;
+}
+
+.comment-box {
+  height: 8vh;
+  width: 25vw;
+}

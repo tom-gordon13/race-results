@@ -3,6 +3,7 @@ const Schema = mongoose.Schema;
 
 const resultsSchema = new Schema({
     runner: {type: Schema.Types.ObjectId, ref: 'User', required: true},
+    race: {type: Schema.Types.ObjectId},
     distance: {
         type: String, 
         enum: ['1 Mile', '5k', '10k', 'Half Marathon', 'Marathon', 'Other'],
@@ -12,8 +13,12 @@ const resultsSchema = new Schema({
     finishTime: {
         type: String,
     }, 
-    race: {type: Schema.Types.ObjectId, required: true},
-    place: Number
+    place: Number,
+    focus: {
+        type: String,
+        enum: ['A', 'B', 'C', '--']
+    },
+    comments: String
 })
 
 module.exports = mongoose.model('Result', resultsSchema);
