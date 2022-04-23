@@ -1,16 +1,27 @@
 const Result = require('../models/result');
+const User = require('../models/user');
 
 module.exports = {
     index,
     new: newResult, create
 }
 
+// function index(req, res) {
+//     Result.find({}, function(err, results){
+//         console.log(results)
+//         res.render('results/index', {results});
+//     })
+// }
+
 function index(req, res) {
-    Result.find({}, function(err, results){
+    Result.find({}).populate('runner')
+    .exec(function(err, results){
+        console.log('hi')    
+        console.log(results)    
         res.render('results/index', {results});
-        // res.render('results/index');
-    })
+        })
 }
+
 
 function newResult(req, res) {
     // Middleware

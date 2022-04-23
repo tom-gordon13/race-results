@@ -1,3 +1,11 @@
 <%- include('../partials/header.ejs') -%> 
     <h1>Results Index</h1>
+
+    <% results.forEach(result => { %> 
+        <section class='result-display'>
+            <h3><%= result.runner.name %>  </h3>
+            <h3>Distance: <%= result.distance %>  </h3>
+            <h3>Finishing Time: <%= result.finishTime %>  </h3>
+        </section>
+    <% }) %> 
 <%- include('../partials/footer.ejs') -%>
