@@ -1,15 +1,13 @@
 <%- include('../partials/header.ejs') -%> 
-<div id='result-index-container'>
-<div class='left-menu'>
-    <h2>Fixed Menu</h2>
-</div>
 
+<%- include('../partials/fixed-left-menu.ejs') -%> 
 
-   <div id='all-results'>
+<div class='right-body'>
+<div id='all-results'>
     <h1>Race Results</h1>
 
     <% results.forEach(result => { %> 
-        <section class='result-display'>
+        <section class='result-display-index'>
             <img src='<%= result.runner.avatar %>' alt='avatar' class='result-avatar'>
             <div>
                 <h2><%= result.runner.name %>  </h2>
@@ -19,9 +17,11 @@
                 <h5>Race: </h5><h3><%= result.race %></h3>
                 <h5>Distance: </h5><h3><%= result.distance %></h3>
                 <h5>Finishing Time: </h5><h3><%= result.finishTime %></h3>
+                <a href='/results/<%= result.id %>'>See More</a>
             </div>
         </section>
     <% }) %> 
 </div>   
 </div>
+
 <%- include('../partials/footer.ejs') -%>

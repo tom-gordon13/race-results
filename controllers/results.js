@@ -3,7 +3,8 @@ const User = require('../models/user');
 
 module.exports = {
     index,
-    new: newResult, create
+    new: newResult, create, 
+    show
 }
 
 // function index(req, res) {
@@ -15,13 +16,19 @@ module.exports = {
 
 function index(req, res) {
     Result.find({}).populate('runner')
-    .exec(function(err, results){
-        console.log('hi')    
-        console.log(results)    
+    .exec(function(err, results){  
         res.render('results/index', {results});
         })
 }
 
+function show(req, res) {
+    Result.findById(req.params.id)
+        .populate('runner')
+        .exec(function(err, result) {
+            res.render('results/show', { title: 'Show Result', result });
+            }
+        );
+}
 
 function newResult(req, res) {
     // Middleware
