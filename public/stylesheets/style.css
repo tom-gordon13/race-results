@@ -21,16 +21,22 @@ a {
   height: 30px;
 }
 
+
+
 nav {
-  /* background-color: rgba(217, 27, 27, 0.906); */
+  background-color: white;
   border-bottom: 1px solid rgba(219, 213, 213, 0.496);
   display: flex;
   width: 100%;
-  height: 8vmax;
+  height: 5vmax;
   flex-direction: row;
   justify-content: space-between;
   align-items: center;
-  
+  overflow: hidden;
+  position: fixed; /* Set the navbar to fixed position */
+  top: 0; /* Position the navbar at the top of the page */
+  width: 100%; /* Full width */
+  margin-bottom: 10px;
 }
 
 nav > a {
@@ -39,6 +45,7 @@ nav > a {
 
 h1 {
   display: block;
+  align-self: center;
 }
 
 #nav-left {
@@ -77,4 +84,81 @@ form > label, div {
 .comment-box {
   height: 8vh;
   width: 25vw;
+}
+
+#result-index-container {
+  display: grid;
+  grid-template-columns: 1fr 2fr;
+  margin-top: 5vmax;
+}
+
+.left-menu {
+  color: #6a56ac;
+  background-color: rgb(235, 228, 228);
+  grid-column: 1 / span 1;
+  width: 28%;
+  height: 80%;
+  position: fixed;
+  display: flex;
+  justify-content: center;
+}
+
+#all-results {
+  grid-column: 2 / span 2;
+  display: flex;
+  background-color: rgb(233, 225, 225);
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  align-self: flex-end;
+  width: 90%;
+  margin-right: 10%;
+  padding: 40px;
+}
+
+
+
+.result-display {
+  background-color: rgb(255, 255, 255);
+  display: grid;
+  grid-template-rows: 1fr 2fr;
+  grid-template-columns: 2fr 3fr;
+  grid-template-areas: 
+  'avatar header'
+  'aside main';
+  align-items: wrap;
+  justify-content: center;
+  align-content: end;
+  width: 90%;
+  margin-top: 4%;
+  border-radius: 3%;
+}
+
+.result-avatar {
+  border-radius: 50%;
+  margin: 5%;
+  height: 100px; 
+  width: 100px;
+  grid-area: avatar;
+  align-self: center;
+  /* grid-row: 1 / span 1; */
+  /* grid-column: 1 / span 1;  */
+}
+
+section > h2, h5 {
+  grid-row: 1 / span 1;
+  grid-column: 2 / span 1;
+  display: block;
+  margin-bottom: 1%;
+}
+
+div > h3 {
+  border-bottom: 1px solid rgba(219, 213, 213, 0.496);
+}
+
+section > h4 {
+  grid-row: 2 / span 1;
+  grid-column: 2 / span 1;
+  margin-bottom: 10%;
+  display: block;
 }
