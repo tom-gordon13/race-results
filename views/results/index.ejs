@@ -8,7 +8,9 @@
 
     <% results.forEach(result => { %> 
         <section class='result-display-index'>
+            <div>
             <img src='<%= result.runner.avatar %>' alt='avatar' class='result-avatar'>
+            </div>
             <div>
                 <h2><%= result.runner.name %>  </h2>
                 <h5> <%=  (result.resultDate) ? result.resultDate.toLocaleDateString() : 'No Date Given' %></h5>
@@ -18,7 +20,17 @@
                 <h5>Distance: </h5><h3><%= result.distance %></h3>
                 <h5>Finishing Time: </h5><h3><%= result.finishTime %></h3>
                 <a href='/results/<%= result.id %>'>See More</a>
+
+                <% if (result.runner._id.equals(user._id)) { %>
+                <form action='/results/<%= result._id %>?_method=DELETE' method='POST'>
+                    <button type='submit'>Delete Result</button>
+                </form>
+                <% } %> 
             </div>
+            <div id='index-image'>
+                <%- (result.resultImage) ? `<img src=${result.resultImage}>` : 'No Photo Given' %>
+            </div>
+
         </section>
     <% }) %> 
 </div>   

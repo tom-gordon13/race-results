@@ -16,4 +16,6 @@ router.get('/:id', resultsCtrl.show);
 // CREATE /results
 router.post('/', isLoggedIn, resultsCtrl.create);
 
+router.delete('/:id', resultsCtrl.delete);
+
 module.exports = router;

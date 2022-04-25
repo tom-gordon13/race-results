@@ -10,7 +10,7 @@
     <h1 class='title'><%= title %> </h1>
     
     <div>
-        <label id='race-name'>Race Name:
+        <label id='raceName'>Race Name:
             <input type='text' >
         </label>
 
@@ -50,6 +50,10 @@
             <option value='<%= focus %>'><%= focus %></option>
             <% }); %>
         </select>
+    </label>
+
+    <label>Image URL:
+        <input type='url' name='resultImage'>
     </label>
 </div>
 

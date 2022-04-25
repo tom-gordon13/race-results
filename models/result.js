@@ -5,7 +5,8 @@ const Schema = mongoose.Schema;
 const resultsSchema = new Schema({
     runner: {type: Schema.Types.ObjectId, ref: 'User', required: true},
     // runnerName: {type: String, required: true},
-    race: {type: Schema.Types.ObjectId},
+    // race: {type: Schema.Types.ObjectId},
+    raceName: String,
     resultDate: {type: Date, required: true},
     distance: {
         type: String, 
@@ -25,6 +26,7 @@ const resultsSchema = new Schema({
         type: String,
         enum: ['A', 'B', 'C', '--']
     },
+    resultImage: String,
     comments: String
 },{
     timestamps: true
