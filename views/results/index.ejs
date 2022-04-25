@@ -11,7 +11,7 @@
             <img src='<%= result.runner.avatar %>' alt='avatar' class='result-avatar'>
             <div>
                 <h2><%= result.runner.name %>  </h2>
-                <h5><%= result.resultDate %> Result_Date | Result_Location</h5>
+                <h5> <%=  (result.resultDate) ? result.resultDate.toLocaleDateString() : 'No Date Given' %></h5>
             </div>
             <div>
                 <h5>Race: </h5><h3><%= result.race %></h3>

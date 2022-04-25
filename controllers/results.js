@@ -1,18 +1,12 @@
 const Result = require('../models/result');
 const User = require('../models/user');
+const moment = require('moment');
 
 module.exports = {
     index,
     new: newResult, create, 
     show
 }
-
-// function index(req, res) {
-//     Result.find({}, function(err, results){
-//         console.log(results)
-//         res.render('results/index', {results});
-//     })
-// }
 
 function index(req, res) {
     Result.find({}).populate('runner')
@@ -32,12 +26,20 @@ function show(req, res) {
 
 function newResult(req, res) {
     // Middleware
+    console.log(moment().format('dddd'))
     res.render('results/new', {title: 'Add New Result'})
 }
 
 function create(req, res) {
     req.body.runner = req.user._id
+
+    let finalTime = moment.duration(
+        req.body.finishHours, 'hours', 
+        req.body.finishMinutes, 'minutes',
+        req.body.finishSeconds, 'seconds');
+    
     let result = new Result(req.body);
+    result.finishTime = `${result.finishHours}:${result.finishMinutes}.${result.finishSeconds}`
     result.save(function(err){
         if (err) return res.redirect('/results/new');
         console.log(result);

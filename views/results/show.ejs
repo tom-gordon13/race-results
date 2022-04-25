@@ -12,7 +12,7 @@
         <div class='result-show-content'>
             <h5>Distance:  </h5><h3><%= result.distance %></h3>
             <h5>Finishing Time: </h5><h3><%= result.finishTime %></h3>
-            <h5>Pace: </h5><h3>Result_Pace</h3>
+            <h5>Pace: </h5><h3><%= (result.finishHours*60*60 + result.finishMinutes*60 + result.finishSeconds) / arrays.distConvert[result.distance] %></h3>
         </div>
         
     </section>

@@ -1,4 +1,5 @@
 const mongoose = require('mongoose');
+const moment = require('moment');
 const Schema = mongoose.Schema;
 
 const resultsSchema = new Schema({
@@ -15,6 +16,9 @@ const resultsSchema = new Schema({
     finishTime: {
         type: String,
     }, 
+    finishHours: {type: Number, required: true},
+    finishMinutes: {type: Number, required: true},
+    finishSeconds: {type: Number, required: true},
     place: Number,
     focus: {
         type: String,

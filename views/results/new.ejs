@@ -1,25 +1,33 @@
 <%- include('../partials/header.ejs') -%> 
 
- 
+<%- include('../partials/fixed-left-menu.ejs') -%> 
 
+<div class='right-body'>
 <% const distanceArr = ['1 Mile', '5k', '10k', 'Half Marathon', 'Marathon', 'Other'] %> 
  
 
-<form id='new-resul-form' action='/results' method='POST'>
+<form id='new-result-form' action='/results' method='POST'>
     <h1 class='title'><%= title %> </h1>
     
     <div>
-        <label>Race Name:
-            <input type='text'>
+        <label id='race-name'>Race Name:
+            <input type='text' >
         </label>
 
         <label>Race Date:
-            <input type='resultDate'>
+            <input type='date' name='resultDate'>
         </label>
     </div>      
     
     <div>
-        <label>Distance:
+        <label>Finish Time
+            <br>
+            Hours: <input type='number' name='finishHours' class='time-input'>
+            Minutes: <input type='number' name='finishMinutes' class='time-input'>
+            Seconds: <input type='number' name='finishSeconds' class='time-input'>
+        </label>
+
+        <label id='dist-input'>Distance:
             <select name='distance'>
                 <option>--</option>
                 <% arrays.distanceArr.forEach(dist => { %> 
@@ -28,11 +36,9 @@
             </select>
         </label>
         
-        <label>Finish Time:
-            <input type='text' name='finishTime'>
-        </label>
     </div>
 
+    <div>
     <label>Place:
         <input type='text' name='place'>
     </label>
@@ -45,11 +51,18 @@
             <% }); %>
         </select>
     </label>
+</div>
 
+<div>
     <label>Additional Comments:
         <textarea name='comments' class='comment-box'></textarea>
     </label>
+</div>
 
-    <button type='submit'>Add Result</button>
+<div>
+    <button type='submit' id='post-button'>Post Result</button>
+</div>
+
 </form>
+</div>
 <%- include('../partials/footer.ejs') -%>
