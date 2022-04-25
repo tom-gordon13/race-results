@@ -40,6 +40,7 @@ function create(req, res) {
     
     let result = new Result(req.body);
     result.finishTime = `${result.finishHours}:${result.finishMinutes}.${result.finishSeconds}`
+    result.totalSeconds = result.finishHours*60*60 + result.finishMinutes*60 + result.finishSeconds;
     result.save(function(err){
         if (err) return res.redirect('/results/new');
         console.log(result);

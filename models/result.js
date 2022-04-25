@@ -19,6 +19,7 @@ const resultsSchema = new Schema({
     finishHours: {type: Number, required: true},
     finishMinutes: {type: Number, required: true},
     finishSeconds: {type: Number, required: true},
+    totalSeconds: Number,
     place: Number,
     focus: {
         type: String,

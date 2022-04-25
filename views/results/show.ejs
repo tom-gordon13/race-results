@@ -6,13 +6,16 @@
         <img src='<%= result.runner.avatar %>' alt='avatar' class='result-avatar'>
         <div>
             <h2><%= result.runner.name %>  </h2>
-            <h5><%= result.resultDate %> Result_Date | Result_Location</h5>
+            <h5> <%=  (result.resultDate) ? result.resultDate.toLocaleDateString() : 'No Date Given' %></h5>
             <h5>Race: </h5><h3><%= result.race %></h3>
         </div>
         <div class='result-show-content'>
             <h5>Distance:  </h5><h3><%= result.distance %></h3>
             <h5>Finishing Time: </h5><h3><%= result.finishTime %></h3>
-            <h5>Pace: </h5><h3><%= (result.finishHours*60*60 + result.finishMinutes*60 + result.finishSeconds) / arrays.distConvert[result.distance] %></h3>
+            <h5>Pace per Mile: </h5><h3>
+                <% let paceSec = (result.totalSeconds / arrays.distConvert[result.distance]) %>
+                <%= `${Math.floor(paceSec/60)}:${Math.floor(paceSec % 60)}` %> 
+            </h3>
         </div>
         
     </section>
