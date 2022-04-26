@@ -441,3 +441,27 @@ section > h4 {
   height: 10vmax;
   width: 10vmax;
 }
+
+.left-menu > a {
+  color: var(--main-purple);
+  text-decoration: none;
+}
+
+
+
+/* USER SHOW PAGE */
+.show-header{
+  width: 98%;
+  height: 100%;
+  background-color: var(--second-purple);
+  grid-column: 1 / span 2;
+  grid-row: 1 / span 2;
+}
+
+.show-header > img {
+  border-radius: 50%;
+  margin-left: 40px;
+  margin-top: 15px;
+  height: 12vmax;
+  width: 12vmax;
+}

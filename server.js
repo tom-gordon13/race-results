@@ -15,6 +15,7 @@ require('./config/passport');
 var homeRouter = require('./routes/home');
 var resultsRouter = require('./routes/results');
 var usersRouter = require('./routes/users');
+// var profilesRouter = require('./routes/profiles');
 
 var app = express();
 
@@ -45,6 +46,7 @@ app.use(function (req, res, next) {
 app.use('/', homeRouter);
 app.use('/results', resultsRouter);
 app.use('/users', usersRouter);
+// app.use('/profiles', profilesRouter);
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {

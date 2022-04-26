@@ -5,7 +5,7 @@
     <section class='result-display-show'>
         <img src='<%= result.runner.avatar %>' alt='avatar' class='result-avatar'>
         <div>
-            <h2><%= result.runner.name %>  </h2>
+            <a href='/users/<%= result.runner._id %>'><h2><%= result.runner.name %>  </h2></a>
             <h4> <%=  (result.resultDate) ? result.resultDate.toLocaleDateString() : 'No Date Given' %></h4>
             <h4>Race: </h4><h3><%= result.race %></h3>
         </div>

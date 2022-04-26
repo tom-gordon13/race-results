@@ -1,0 +1,23 @@
+<%- include('../partials/header.ejs') -%> 
+
+<section class='show-header'>
+
+    <h2>User Show Page</h2>
+    <img src='<%= user.avatar %> ' >
+
+</section>
+
+<section class='my-results-show'>
+    <% results.forEach(result => { %> 
+        
+        <h5>Race: </h5><h3><%= result.race %></h3>
+        <h5>Distance: </h5><h3><%= result.distance %></h3>
+        <h5>Finishing Time: </h5><h3><%= result.finishTime %></h3>
+               
+
+    <% }) %>
+</section>
+
+
+
+<%- include('../partials/footer.ejs') -%>
