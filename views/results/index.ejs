@@ -6,13 +6,14 @@
     <h1>Race Results</h1>
     <div id='all-results'>
     <!-- <div id='resultList'> -->
-    <% results.forEach(result => { %> 
+    <% runners.forEach(runner => { %> 
+        <% runner.results.forEach(result => { %> 
         <section class='result-display-index'>
             <div>
             <img src='<%= result.runner.avatar %>' alt='avatar' class='result-avatar'>
             </div>
             <div>
-                <h2><%= result.runner.name %>  </h2>
+                <h2><%= runner.name %>  </h2>
                 <h5> <%=  (result.resultDate) ? result.resultDate.toLocaleDateString() : 'No Date Given' %></h5>
             </div>
             <div>
@@ -27,7 +28,7 @@
                 </form>
 
                 <% if (result.runner._id.equals(user._id)) { %>
-                <form action='/results/<%= result._id %>?_method=DELETE' method='POST' id='delete-form'>
+                <form action='/results/<%= result.id %>?_method=DELETE' method='POST' id='delete-form'>
                     <button type='submit'>Delete Result</button>
                 </form>
                 <% } %> 
@@ -38,6 +39,7 @@
 
         </section>
     <% }) %> 
+<% }) %>
 <!-- </div> -->
 </div>   
 </div>

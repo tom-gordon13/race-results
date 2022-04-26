@@ -10,7 +10,8 @@ body {
   font-family: 'Play', sans-serif;
   display: flex;
   flex-direction: column;
-  padding: 20px;
+  padding-left: 20px;
+  margin-left: 0;
 }
 
 .body-section {
@@ -60,6 +61,8 @@ nav {
   top: 0; /* Position the navbar at the top of the page */
   width: 100%; /* Full width */
   /* margin-bottom: 10px; */
+  z-index: 9;
+  margin-left: 0;
 }
 
 nav > a {
@@ -452,16 +455,25 @@ section > h4 {
 /* USER SHOW PAGE */
 .show-header{
   width: 98%;
-  height: 100%;
-  background-color: var(--second-purple);
+  height: 14vmax;
+  /* background-color: var(--second-purple); */
+  background-image: linear-gradient(to right, var(--second-purple), white);
+  /* background-color: linear-gradient(45deg, blue, red); */
   grid-column: 1 / span 2;
   grid-row: 1 / span 2;
+  position: relative;
 }
 
 .show-header > img {
   border-radius: 50%;
+  border: 3px white solid;
   margin-left: 40px;
-  margin-top: 15px;
+  margin-top: 80px;
   height: 12vmax;
   width: 12vmax;
+  position: absolute;
+}
+
+.my-results-show {
+  margin-top: 50px;
 }

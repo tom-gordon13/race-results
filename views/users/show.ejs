@@ -2,20 +2,45 @@
 
 <section class='show-header'>
 
-    <h2>User Show Page</h2>
-    <img src='<%= user.avatar %> ' >
-
+    <img src='<%= runner.avatar %> ' >
+    
 </section>
 
-<section class='my-results-show'>
-    <% results.forEach(result => { %> 
-        
-        <h5>Race: </h5><h3><%= result.race %></h3>
-        <h5>Distance: </h5><h3><%= result.distance %></h3>
-        <h5>Finishing Time: </h5><h3><%= result.finishTime %></h3>
-               
+<h2><%= runner.name %> </h2>
 
-    <% }) %>
+<section class='my-results-show'>
+    <% runner.results.forEach(result => { %> 
+        <section class='result-display-index'>
+            <div>
+            <img src='<%= runner.avatar %>' alt='avatar' class='result-avatar'>
+            </div>
+            <div>
+                <h2><%= runner.name %>  </h2>
+                <h5> <%=  (result.resultDate) ? result.resultDate.toLocaleDateString() : 'No Date Given' %></h5>
+            </div>
+            <div>
+                <h5>Race: </h5><h3><%= result.race %></h3>
+                <h5>Distance: </h5><h3><%= result.distance %></h3>
+                <h5>Finishing Time: </h5><h3><%= result.finishTime %></h3>
+                
+                
+                
+                <form action='/results/<%= result.id %>' id='see-more-form'>
+                    <button type='submit'>See More</button>
+                </form>
+
+                <% if (runner._id.equals(user._id)) { %>
+                <form action='/results/<%= result._id %>?_method=DELETE' method='POST' id='delete-form'>
+                    <button type='submit'>Delete Result</button>
+                </form>
+                <% } %> 
+            </div>
+            <div id='index-image'>
+                <%- (result.resultImage) ? `<img src=${result.resultImage}>` : 'No Photo Given' %>
+            </div>
+
+        </section>
+    <% }) %> 
 </section>
 
 

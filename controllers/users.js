@@ -8,9 +8,19 @@ module.exports = {
 
 
 function show(req, res) {
-    User.findById(req.params._id, function(err, user) {
-        Result.find({'results.runner._id': req.params._id}, function(err, results){
-            res.render('users/show', {results});
-        })
-    }
-    )}
+    User.findById(req.params.id)
+    .populate('results')
+    .exec(function(err, runner){
+        res.render('users/show', {runner})
+    })
+}
+
+// function show(req, res) {
+//     User.findById(req.params.id).then(function(user){
+//         Result.find({user})
+//     }) 
+//             res.render('users/show', {user, results});
+//         })
+//     }
+//     )}
+
