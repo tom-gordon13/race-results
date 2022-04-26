@@ -3,9 +3,9 @@
 <%- include('../partials/fixed-left-menu.ejs') -%> 
 
 <div class='right-body'>
-<div id='all-results'>
     <h1>Race Results</h1>
-
+    <div id='all-results'>
+    <!-- <div id='resultList'> -->
     <% results.forEach(result => { %> 
         <section class='result-display-index'>
             <div>
@@ -19,10 +19,15 @@
                 <h5>Race: </h5><h3><%= result.race %></h3>
                 <h5>Distance: </h5><h3><%= result.distance %></h3>
                 <h5>Finishing Time: </h5><h3><%= result.finishTime %></h3>
-                <a href='/results/<%= result.id %>'>See More</a>
+                
+                
+                
+                <form action='/results/<%= result.id %>' id='see-more-form'>
+                    <button type='submit'>See More</button>
+                </form>
 
                 <% if (result.runner._id.equals(user._id)) { %>
-                <form action='/results/<%= result._id %>?_method=DELETE' method='POST'>
+                <form action='/results/<%= result._id %>?_method=DELETE' method='POST' id='delete-form'>
                     <button type='submit'>Delete Result</button>
                 </form>
                 <% } %> 
@@ -33,6 +38,7 @@
 
         </section>
     <% }) %> 
+<!-- </div> -->
 </div>   
 </div>
 

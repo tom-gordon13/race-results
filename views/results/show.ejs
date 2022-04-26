@@ -6,8 +6,8 @@
         <img src='<%= result.runner.avatar %>' alt='avatar' class='result-avatar'>
         <div>
             <h2><%= result.runner.name %>  </h2>
-            <h5> <%=  (result.resultDate) ? result.resultDate.toLocaleDateString() : 'No Date Given' %></h5>
-            <h5>Race: </h5><h3><%= result.race %></h3>
+            <h4> <%=  (result.resultDate) ? result.resultDate.toLocaleDateString() : 'No Date Given' %></h4>
+            <h4>Race: </h4><h3><%= result.race %></h3>
         </div>
         <div class='result-show-content'>
             <h5>Distance:  </h5><h3><%= result.distance %></h3>
@@ -16,9 +16,12 @@
                 <% let paceSec = (result.totalSeconds / arrays.distConvert[result.distance]) %>
                 <%= `${Math.floor(paceSec/60)}:${Math.floor(paceSec % 60)}` %> 
             </h3>
-            
         </div>
-        
+    
+        <div id='show-img'>
+            <%- (result.resultImage) ? `<img src=${result.resultImage}>` : 'No Photo Given' %>
+        </div>
+
     </section>
 
 </div>
