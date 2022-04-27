@@ -13,7 +13,7 @@
     <% runner.results.forEach(result => { %> 
         <section class='result-display-show'>
             <div>
-                <h5>Race: </h5><h3><%= result.race %></h3>
+                <h5>Race: </h5><h3><%= result.raceName %></h3>
                 <h5> <%=  (result.resultDate) ? result.resultDate.toLocaleDateString() : 'No Date Given' %></h5>
             </div>
 
@@ -35,7 +35,7 @@
                 <h5>Runner Comments:</h5><h4><%= (result.comments) ? `"${result.comments}"` : 'No Comments Given'%></h4>
             </div>
 
-            <div class='show-forms'>
+            <div class='show-forms-user'>
                 <form action='/results/<%= result.id %>' id='see-more-form'>
                     <button type='submit'>See More</button>
                 </form>

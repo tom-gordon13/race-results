@@ -272,48 +272,60 @@ div > h3 {
 section > h4 {
   grid-row: 2 / span 1;
   grid-column: 2 / span 1;
-  margin-bottom: 10%;
+  margin-bottom: 5%;
   display: block;
 }
 
-.result-display-show {
+.result-display-showResult {
   background-color: rgb(255, 255, 255);
   display: grid;
-  grid-template-rows: 1fr 3fr;
+  grid-template-rows: 1fr auto auto auto;
   grid-template-columns: 1fr 6fr;
   grid-template-areas: 
   'avatar header'
   'aside aside';
   align-items: wrap;
   justify-content: center;
-  /* align-content: end; */
   width: 90%;
   margin-top: 4%;
-  border-radius: 3%;
+  border: 2px solid red;
 }
 
-.result-show-content {
+.result-show-contentResult {
   grid-column: 2 / span 1;
   grid-row: 2 / span 1;
   display: flex;
-  height: 10%;
+  flex-wrap: wrap;
   width: 100%;
   justify-content: flex-start;
 }
 
-.result-show-content > h3{
+.result-show-contentResult > h3{
   margin-right: 50px;
   margin-left: 15px;
   border: none;
 }
 
+.result-show-contentResult > h3{
+  margin-right: 50px;
+  margin-left: 15px;
+  border: none;
+}
+
+.result-display-showResult > div:nth-of-type(3) {
+  grid-column: 2 / span 1;
+  grid-row: 3 / span 1;
+  display: flex;
+  width: 100%;
+  justify-content: flex-start;
+}
+
 #show-img {
   grid-column: 2 / span 1;
-  grid-row: 2 / span 1;
+  grid-row: 4 / span 1;
   align-self: center;
   height: 500px;
   width: 600px;
-  margin-top: 10%;
   display: flex;
   justify-content: center;
 }
@@ -323,8 +335,18 @@ section > h4 {
   width: 100%;
 }
 
-.left-menu > h2 {
-  
+#placeholder-photo {
+  height: 500px;
+  width: 600px;
+  background-color: var(--main-purple);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: white;
+}
+
+.result-display-showResult > a {
+  color: red;
 }
 
 
@@ -488,7 +510,7 @@ section > h4 {
 
 .result-display-show {
   margin-top: 2%;
-  border-radius: 0%;
+  display: grid;
   grid-template-columns: 2fr 1fr 1fr 1fr 1fr;
   grid-template-rows: 1fr 2fr;
   width: 1000px;
@@ -528,9 +550,9 @@ section > h4 {
   grid-column: 4 / span 1;
 }
 
-.show-forms {
-  grid-column: 5 / span 1;
+.show-forms-user {
   grid-row: 2 / span 1;
+  grid-column: 5 / span 1;
   display: flex;
   flex-direction: column;
   justify-content: center;
