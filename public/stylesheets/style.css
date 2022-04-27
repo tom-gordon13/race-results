@@ -279,7 +279,7 @@ section > h4 {
 .result-display-showResult {
   background-color: rgb(255, 255, 255);
   display: grid;
-  grid-template-rows: 1fr auto auto auto;
+  grid-template-rows: 1fr auto auto auto 1fr;
   grid-template-columns: 1fr 6fr;
   grid-template-areas: 
   'avatar header'
@@ -288,7 +288,8 @@ section > h4 {
   justify-content: center;
   width: 90%;
   margin-top: 4%;
-  border: 2px solid red;
+  background-color: whitesmoke;
+  box-shadow: 2px 2px 4px 4px var(--main-purple);
 }
 
 .result-show-contentResult {
@@ -298,6 +299,11 @@ section > h4 {
   flex-wrap: wrap;
   width: 100%;
   justify-content: flex-start;
+}
+
+#result-show-name {
+  color: var(--main-purple);
+  text-decoration: none;
 }
 
 .result-show-contentResult > h3{
@@ -328,6 +334,7 @@ section > h4 {
   width: 600px;
   display: flex;
   justify-content: center;
+  margin-bottom: 40px;
 }
 
 #show-img > img {
@@ -345,10 +352,20 @@ section > h4 {
   color: white;
 }
 
-.result-display-showResult > a {
-  color: red;
+#comment-form {
+  grid-row: 5 / span 1;
+  grid-column: 2 / span 1;
+  width: 600px;
+  height: 80%;
+  display: flex;
+  justify-content: center;
+  border: none;
 }
 
+#comment-form > textarea {
+  width: 80%;
+  height: 70%;
+}
 
 /* NEW RESULT PAGE */
 #new-result-form {

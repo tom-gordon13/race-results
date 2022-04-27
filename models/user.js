@@ -2,6 +2,14 @@ const mongoose = require('mongoose');
 const Schema = mongoose.Schema;
 
 
+const exCommentsSchema = new Schema({
+    user: {type: Schema.Types.ObjectId, ref: 'User', required: true},
+    text: String
+},{
+    timestamps: true
+  })
+
+
 const resultsSchema = new Schema({
     runner: {type: Schema.Types.ObjectId, ref: 'User', required: true},
     // runnerName: {type: String, required: true},
@@ -30,7 +38,8 @@ const resultsSchema = new Schema({
         enum: ['A', 'B', 'C', '--']
     },
     resultImage: String,
-    comments: String
+    comments: String,
+    exComments: [exCommentsSchema]
 },{
     timestamps: true
   })

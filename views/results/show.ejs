@@ -5,7 +5,7 @@
     <section class='result-display-showResult'>
         <img src='<%= result.runner.avatar %>' alt='avatar' class='result-avatar'>
         <div>
-            <a href='/users/<%= result.runner._id %>'><h2><%= result.runner.name %>  </h2></a>
+            <a href='/users/<%= result.runner._id %>' id='result-show-name'><h2 ><%= result.runner.name %> </h2></a>
             <h4> <%=  (result.resultDate) ? result.resultDate.toLocaleDateString() : 'No Date Given' %></h4>
             <h4>Race: </h4><h3><%= result.raceName %></h3>
         </div>
@@ -28,6 +28,11 @@
         <div id='show-img'>
             <%- (result.resultImage) ? `<img src=${result.resultImage}>` : `<div id='placeholder-photo'>No Image Added</div>` %>
         </div>
+
+        <form action='/results/<%= result._id%>/comments' id='comment-form' method='post'>Add a Comment:
+            <textarea name='text'></textarea>
+            <button type='submit'>Submit Comment</button>
+        </form>
 
     </section>
 
