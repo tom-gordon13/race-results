@@ -138,6 +138,24 @@ form > label, div {
   justify-content: center;
 }
 
+.left-home-menu {
+  color: var(--main-purple);
+  background-color: rgb(235, 228, 228);
+  width: 28%;
+  height: 70%;
+  position: fixed;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: center;
+}
+
+.left-home-menu > div:nth-of-type(1) {
+  border-bottom: 2px solid gray;
+  width: 90%;
+  padding-bottom: 20px;
+}
+
 #all-results {
   grid-column: 2 / span 2;
   display: flex;

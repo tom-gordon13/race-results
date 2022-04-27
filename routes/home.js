@@ -1,6 +1,7 @@
 var express = require('express');
 var router = express.Router();
 const passport = require('passport');
+const Result = require('../models/result');
 // const fetch = require('node-fetch');
 
 /* GET home page. */
@@ -8,7 +9,10 @@ router.get('/', function(req, res, next) {
   if (req.user) {
     const username = req.user.name;
   }
-  res.render('home', { title: 'Keppa' });
+  Result.find({}).populate('runner')
+    .exec(function(err, results){
+  res.render('home', { title: 'Keppa', results });
+    })
 });
 
 //Google OAuth login route

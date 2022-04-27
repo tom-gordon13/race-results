@@ -1,7 +1,51 @@
 <%- include('./partials/header.ejs') -%> 
-    <h1>Welcome to <%= title %></h1>
-    <% if (user) { %>
-    <p>Welcome <%= user.name %> </p> 
-    <p>Welcome <%= user.email %> </p> 
-    <% } %> 
+
+<% if (!user) { %>
+<%- include('./partials/fixed-left-home-menu.ejs') -%> 
+<% } else { %>
+    <%- include('./partials/fixed-left-menu.ejs') -%>
+<% } %> 
+
+<div class='right-body'>
+    <h1>Race Results</h1>
+    <div id='all-results'>
+    <!-- <div id='resultList'> -->
+    
+        <% results.forEach(result => { %> 
+        <section class='result-display-index'>
+            <div>
+            <img src='<%= result.runner.avatar %>' alt='avatar' class='result-avatar'>
+            </div>
+            <div>
+                <h2><%= result.runner.name %></h2>
+                <h5> <%=  (result.resultDate) ? result.resultDate.toLocaleDateString() : 'No Date Given' %></h5>
+            </div>
+            <div>
+                <h5>Race: </h5><h3><%= result.raceName %></h3>
+                <h5>Distance: </h5><h3><%= result.distance %></h3>
+                <h5>Finishing Time: </h5><h3><%= result.finishTime %></h3>
+                
+                
+                
+                <form action='/results/<%= result.id %>' id='see-more-form'>
+                    <button type='submit'>See More</button>
+                </form>
+
+                <% if (user && result.runner._id.equals(user._id)) { %>
+                <form action='/results/<%= result.id %>?_method=DELETE' method='POST' id='delete-form'>
+                    <button type='submit'>Delete Result</button>
+                </form>
+                <% } %> 
+            </div>
+            <div id='index-image'>
+                <%- (result.resultImage) ? `<img src=${result.resultImage}>` : 'No Photo Given' %>
+            </div>
+
+        </section>
+    <% }) %> 
+
+<!-- </div> -->
+</div>   
+</div>
+
 <%- include('./partials/footer.ejs') -%>
