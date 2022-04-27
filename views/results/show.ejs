@@ -33,23 +33,24 @@
             <% if (result.exComments.length) { %> 
                 <% result.exComments.forEach(comment => { %> 
                     <div class='comment-display'>
-                        <h1>Comment from <%=comment.name%>:</h1>
-                        <h3><%=comment.text%></h1>
                         
-                        <form action=''>
-                            <button type='submit'>Edit Comment</button>
-                        </form>
-                        
-                        <form action=''>
+                        <div class='cmt-text'>
+                            <h1>Comment from <%=comment.name%>:</h1>
+                            <h3><%=comment.text%></h1>
+                        </div>
+                        <% if (user && user._id.equals(comment.user)) { %>
+                        <form action='/comments/<%= comment._id%>?_method=DELETE' method='POST' class='delete-cmt-btn'>
                             <button type='submit'>Delete Comment</button>
                         </form>
+                        <% } %>
 
+                        
                     </div>
                 <% }) %> 
             <% } %>
         </section>
 
-        <form action='/results/<%= result._id%>/comments' id='comment-form' method='post'>Add a Comment:
+        <form action='/results/<%= result._id%>/comments' id='comment-form' method='post'>Add a New Comment:
             <textarea name='text'></textarea>
             <button type='submit'>Submit Comment</button>
         </form>

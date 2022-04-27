@@ -362,7 +362,21 @@ section > h4 {
   border: none;
 }
 
+#comment-form > button {
+  font-family: 'Play', sans-serif;
+  font-size: large;
+  background-color: white;
+  margin-top: 20px;
+}
+
+#comment-form > button:hover {
+  background-color: var(--second-purple);
+  -webkit-box-shadow: 0 0 10px rgb(178, 65, 234);
+        box-shadow: 0 0 10px rgb(187, 67, 223);
+}
+
 #comment-form > textarea {
+  margin-top: 20px;
   width: 80%;
   height: 70%;
 }
@@ -378,6 +392,32 @@ section > h4 {
   box-shadow: 2px 2px 4px 4px var(--main-purple);
   padding: 3px;
   margin-top: 15px;
+  display: grid;
+  grid-template-columns: 4fr 1fr;
+}
+
+.cmt-text {
+  grid-column: 1 / span 1;
+}
+
+.delete-cmt-btn {
+  font-family: 'Play', sans-serif;
+  font-size: large;
+  grid-column: 2 / span 1;
+  border: none;
+}
+
+.delete-cmt-btn > button {
+  font-family: 'Play', sans-serif;
+  font-size: large;
+  background-color: white;
+  margin-left: 50px;
+}
+
+.delete-cmt-btn > button:hover {
+  background-color: var(--delete-red);
+  -webkit-box-shadow: 0 0 10px rgb(195, 49, 49);
+    box-shadow: 0 0 10px rgb(201, 51, 51);
 }
 
 /* NEW RESULT PAGE */

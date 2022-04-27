@@ -45,4 +45,6 @@ const resultsSchema = new Schema({
     timestamps: true
   })
 
+
+// module.exports = mongoose.model('ExComment', exCommentsSchema);
 module.exports = mongoose.model('Result', resultsSchema);
