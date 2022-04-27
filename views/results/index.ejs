@@ -6,14 +6,14 @@
     <h1>Race Results</h1>
     <div id='all-results'>
     <!-- <div id='resultList'> -->
-    <% runners.forEach(runner => { %> 
-        <% runner.results.forEach(result => { %> 
+    
+        <% results.forEach(result => { %> 
         <section class='result-display-index'>
             <div>
-            <img src='<%= runner.avatar %>' alt='avatar' class='result-avatar'>
+            <img src='<%= result.runner.avatar %>' alt='avatar' class='result-avatar'>
             </div>
             <div>
-                <h2><%= runner.name %>  </h2>
+                <h2><%= result.runner.name %></h2>
                 <h5> <%=  (result.resultDate) ? result.resultDate.toLocaleDateString() : 'No Date Given' %></h5>
             </div>
             <div>
@@ -39,7 +39,7 @@
 
         </section>
     <% }) %> 
-<% }) %>
+
 <!-- </div> -->
 </div>   
 </div>

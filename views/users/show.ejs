@@ -10,7 +10,7 @@
 
 <section class='my-results-show'>
     <h3>Race Results</h3>
-    <% runner.results.forEach(result => { %> 
+    <% results.forEach(result => { %> 
         <section class='result-display-show'>
             <div>
                 <h5>Race: </h5><h3><%= result.raceName %></h3>
@@ -40,7 +40,7 @@
                     <button type='submit'>See More</button>
                 </form>
 
-                <% if (runner._id.equals(user._id)) { %>
+                <% if (result.runner._id.equals(user._id)) { %>
                 <form action='/results/<%= result._id %>?_method=DELETE' method='POST' id='delete-form'>
                     <button type='submit'>Delete Result</button>
                 </form>

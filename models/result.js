@@ -2,23 +2,31 @@ const mongoose = require('mongoose');
 const moment = require('moment');
 const Schema = mongoose.Schema;
 
+const exCommentsSchema = new Schema({
+    user: {type: Schema.Types.ObjectId, ref: 'User', required: true},
+    text: String
+},{
+    timestamps: true
+  })
+
+
 const resultsSchema = new Schema({
     runner: {type: Schema.Types.ObjectId, ref: 'User', required: true},
     // runnerName: {type: String, required: true},
     // race: {type: Schema.Types.ObjectId},
     raceName: {
         type: String,
-        require: false
+        required: false 
     },
     resultDate: {type: Date, required: true},
     distance: {
         type: String, 
         enum: ['1 Mile', '5k', '10k', 'Half Marathon', 'Marathon'],
-        require: true
+        required: true
     },
+    otherDistance: String,
     finishTime: {
         type: String,
-        required: true
     }, 
     finishHours: {type: Number, required: true},
     finishMinutes: {type: Number, required: true},
@@ -29,11 +37,9 @@ const resultsSchema = new Schema({
         type: String,
         enum: ['A', 'B', 'C', '--']
     },
-    resultImage: {
-        type: String,
-        match: /.{1,}/
-    },
-    comments: String
+    resultImage: String,
+    comments: String,
+    exComments: [exCommentsSchema]
 },{
     timestamps: true
   })

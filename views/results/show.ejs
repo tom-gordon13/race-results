@@ -34,6 +34,14 @@
             <button type='submit'>Submit Comment</button>
         </form>
 
+        <section class='show-exComments'>
+            <% if (result.exComments.length) { %> 
+                <% result.exComments.forEach(comment => { %> 
+                    <h1>Comments: <%=comment.text%></h1>
+                <% }) %> 
+            <% } %>
+        </section>
+
     </section>
 
 </div>

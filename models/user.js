@@ -16,7 +16,7 @@ const resultsSchema = new Schema({
     // race: {type: Schema.Types.ObjectId},
     raceName: {
         type: String,
-        required: false
+        required: false 
     },
     resultDate: {type: Date, required: true},
     distance: {
@@ -63,9 +63,11 @@ const userSchema = new Schema({
         type: Number,
         match: /d{5}/
     }, 
-    results: [resultsSchema]
     }, {
         timestamps: true
 });
 
+
+
+// module.exports = mongoose.model('Result', resultsSchema);
 module.exports = mongoose.model('User', userSchema);
