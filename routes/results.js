@@ -11,11 +11,11 @@ router.get('/index', isLoggedIn, resultsCtrl.index);
 router.get('/new', isLoggedIn, resultsCtrl.new);
 
 // GET /results/:id (show functionality)
-router.get('/:id', resultsCtrl.show);
+router.get('/:id', isLoggedIn, resultsCtrl.show);
 
 // CREATE /results
 router.post('/', isLoggedIn, resultsCtrl.create);
 
-router.delete('/:id', resultsCtrl.delete);
+router.delete('/:id', isLoggedIn, resultsCtrl.delete);
 
 module.exports = router;

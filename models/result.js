@@ -6,16 +6,19 @@ const resultsSchema = new Schema({
     runner: {type: Schema.Types.ObjectId, ref: 'User', required: true},
     // runnerName: {type: String, required: true},
     // race: {type: Schema.Types.ObjectId},
-    raceName: String,
+    raceName: {
+        type: String,
+        require: false
+    },
     resultDate: {type: Date, required: true},
     distance: {
         type: String, 
-        enum: ['1 Mile', '5k', '10k', 'Half Marathon', 'Marathon', 'Other'],
+        enum: ['1 Mile', '5k', '10k', 'Half Marathon', 'Marathon'],
         require: true
     },
-    otherDistance: String,
     finishTime: {
         type: String,
+        required: true
     }, 
     finishHours: {type: Number, required: true},
     finishMinutes: {type: Number, required: true},
@@ -26,7 +29,10 @@ const resultsSchema = new Schema({
         type: String,
         enum: ['A', 'B', 'C', '--']
     },
-    resultImage: String,
+    resultImage: {
+        type: String,
+        match: /.{1,}/
+    },
     comments: String
 },{
     timestamps: true

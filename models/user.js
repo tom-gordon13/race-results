@@ -6,12 +6,15 @@ const resultsSchema = new Schema({
     runner: {type: Schema.Types.ObjectId, ref: 'User', required: true},
     // runnerName: {type: String, required: true},
     // race: {type: Schema.Types.ObjectId},
-    raceName: String,
+    raceName: {
+        type: String,
+        required: false
+    },
     resultDate: {type: Date, required: true},
     distance: {
         type: String, 
-        enum: ['1 Mile', '5k', '10k', 'Half Marathon', 'Marathon', 'Other'],
-        require: true
+        enum: ['1 Mile', '5k', '10k', 'Half Marathon', 'Marathon'],
+        required: true
     },
     otherDistance: String,
     finishTime: {

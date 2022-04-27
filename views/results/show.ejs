@@ -7,7 +7,7 @@
         <div>
             <a href='/users/<%= result.runner._id %>'><h2><%= result.runner.name %>  </h2></a>
             <h4> <%=  (result.resultDate) ? result.resultDate.toLocaleDateString() : 'No Date Given' %></h4>
-            <h4>Race: </h4><h3><%= result.race %></h3>
+            <h4>Race: </h4><h3><%= result.raceName %></h3>
         </div>
         <div class='result-show-content'>
             <h5>Distance:  </h5><h3><%= result.distance %></h3>

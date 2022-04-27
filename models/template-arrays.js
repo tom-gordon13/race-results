@@ -1,5 +1,5 @@
 module.exports = {
-    distanceArr: ['1 Mile', '5k', '10k', 'Half Marathon', 'Marathon', 'Other'],
+    distanceArr: ['1 Mile', '5k', '10k', 'Half Marathon', 'Marathon'],
     focusArr: ['A', 'B', 'C'], 
     distConvert: {
         '1 Mile': 1,

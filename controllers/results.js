@@ -60,7 +60,6 @@ function create(req, res) {
         req.body.finishHours, 'hours', 
         req.body.finishMinutes, 'minutes',
         req.body.finishSeconds, 'seconds');
-
     let result = new Result(req.body);
     result.finishTime = `${result.finishHours}:${result.finishMinutes}.${result.finishSeconds}`
     result.totalSeconds = result.finishHours*60*60 + result.finishMinutes*60 + result.finishSeconds;
