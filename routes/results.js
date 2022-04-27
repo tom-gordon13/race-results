@@ -18,4 +18,6 @@ router.post('/', isLoggedIn, resultsCtrl.create);
 
 router.delete('/:id', isLoggedIn, resultsCtrl.delete);
 
+
 module.exports = router;
+ 

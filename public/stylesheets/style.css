@@ -279,7 +279,7 @@ section > h4 {
 .result-display-showResult {
   background-color: rgb(255, 255, 255);
   display: grid;
-  grid-template-rows: 1fr auto auto auto 1fr;
+  grid-template-rows: 1fr auto auto auto auto 1fr;
   grid-template-columns: 1fr 6fr;
   grid-template-areas: 
   'avatar header'
@@ -353,7 +353,7 @@ section > h4 {
 }
 
 #comment-form {
-  grid-row: 5 / span 1;
+  grid-row: 6 / span 1;
   grid-column: 2 / span 1;
   width: 600px;
   height: 80%;
@@ -365,6 +365,19 @@ section > h4 {
 #comment-form > textarea {
   width: 80%;
   height: 70%;
+}
+
+.show-exComments {
+  width: 80%;
+  grid-row: 5 / span 1;
+  grid-column: 2 / span 1;
+}
+
+.comment-display {
+  background-color: rgb(239, 232, 232);
+  box-shadow: 2px 2px 4px 4px var(--main-purple);
+  padding: 3px;
+  margin-top: 15px;
 }
 
 /* NEW RESULT PAGE */
