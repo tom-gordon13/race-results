@@ -10,7 +10,7 @@
     <h1 class='title'><%= title %> </h1>
     
     <div>
-        <label id='raceName'>Race Name:
+        <label id='race-name'>Race Name:
             <input type='text' name='raceName'>
         </label>
 
@@ -22,9 +22,9 @@
     <div>
         <label>Finish Time
             <br>
-            Hours: <input type='number' name='finishHours' class='time-input' value=00>
-            Minutes: <input type='number' name='finishMinutes' class='time-input' value=00>
-            Seconds: <input type='number' name='finishSeconds' class='time-input' value=00>
+            Hours: <input type='number' name='finishHours' class='time-input' value=00 pattern='\d{2}'>
+            Minutes: <input type='number' name='finishMinutes' class='time-input' value=00 pattern='\d{2}'>
+            Seconds: <input type='number' name='finishSeconds' class='time-input' value=00 pattern='\d{2}'>
         </label>
 
         <label id='dist-input'>Distance:
