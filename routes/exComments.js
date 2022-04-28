@@ -9,5 +9,6 @@ router.post('/results/:id/comments', exCommentsCtrl.create);
 
 router.delete('/comments/:id', exCommentsCtrl.delete);
 
+router.put('/comments/:id', exCommentsCtrl.edit);
 
 module.exports = router;

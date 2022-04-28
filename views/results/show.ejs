@@ -1,5 +1,6 @@
-<%- include('../partials/header.ejs') -%> 
+<%- include('../partials/header-result-show.ejs') -%> 
 <%- include('../partials/fixed-left-menu.ejs') -%>
+
 
 <div class='right-body'>
     <section class='result-display-showResult'>
@@ -29,16 +30,23 @@
             <%- (result.resultImage) ? `<img src=${result.resultImage}>` : `<div id='placeholder-photo'>No Image Added</div>` %>
         </div>
         
+        
+
+
         <section class='show-exComments'>
             <% if (result.exComments.length) { %> 
                 <% result.exComments.forEach(comment => { %> 
                     <div class='comment-display'>
                         
-                        <div class='cmt-text'>
+                        <form class='cmt-text' action='/comments/<%= comment._id%>?_method=PUT' method='POST'>
                             <h1>Comment from <%=comment.name%>:</h1>
-                            <h3><%=comment.text%></h1>
-                        </div>
+                            <textarea type='text' class='comment-text' name='text' readonly><%=comment.text%></textarea>
+                            <button type='submit' class='edit-submit'>Submit Edit</button> 
+                        </form>
+
                         <% if (user && user._id.equals(comment.user)) { %>
+                            
+                            <button class='edit-cmt-btn'>Edit Comment</button>
                         <form action='/comments/<%= comment._id%>?_method=DELETE' method='POST' class='delete-cmt-btn'>
                             <button type='submit'>Delete Comment</button>
                         </form>
@@ -48,6 +56,10 @@
                     </div>
                 <% }) %> 
             <% } %>
+
+            
+
+
         </section>
 
         <form action='/results/<%= result._id%>/comments' id='comment-form' method='post'>Add a New Comment:
@@ -60,4 +72,6 @@
     </section>
 
 </div>
+<script src='/javascripts/comment-edit.js'></script>
+
 <%- include('../partials/footer.ejs') -%>

@@ -4,7 +4,8 @@ const User = require('../models/user');
 
 module.exports = {
     create, 
-    delete: deleteComment
+    delete: deleteComment, 
+    edit
 }
 
 
@@ -34,4 +35,24 @@ function create(req, res) {
       });
     });
   }
+
+  function edit(req, res) {
+    console.log('hihihi edit')
+    Result.findOne({'exComments._id': req.params.id, 'exComments.user': req.user._id})
+    .then(function(result){
+      if (!result) return res.redirect('/results/index');
+      result.exComments.updateOne({'_id': req.params.id}, {
+        $set: {
+          text: req.body.text
+        }
+      })
+      .then(function(comment){
+        
+        
+        result.save(function(err){
+          res.redirect(`/results/${req.params.id}`)
+        })
+      })
+  })
+  }  
 
