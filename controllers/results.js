@@ -54,7 +54,10 @@ function show(req, res) {
 
 function newResult(req, res) {
     // Middleware
-    res.render('results/new', {title: 'Add New Result'})
+    Result.find({})
+    .then(function(results){
+        res.render('results/new', {title: 'Add New Result', results})
+    })
 }
 
 function create(req, res) {
