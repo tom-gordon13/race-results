@@ -1,4 +1,48 @@
+<%
+let breakdownTotal = 0;
+
+let breakdownMile = {distance: '1 Mile', quantity: 0};
+let breakdown5k = {distance: '5k', quantity: 0};
+let breakdown10k = {distance: '10k', quantity: 0};
+let breakdownHalf = {distance: 'Half Marathon', quantity: 0};
+let breakdownMarathon = {distance: 'Marathon', quantity: 0};
+
+let raceArr = [breakdownMile, breakdown5k, breakdown10k, breakdownHalf, breakdownMarathon];
+%>
+
+<!-- <script src='/javascripts/calculate-totals.js'></script> -->
+
+
+<% 
+results.forEach(result => {
+    if (result.runner._id.equals(user._id)) {
+        breakdownTotal++;
+        raceArr.forEach(race => {
+            if (race.distance === result.distance.trim()) race.quantity++;
+        })
+    }
+})
+
+%> 
+
+
 <div class='left-menu'>
     <img src='<%= user.avatar %> ' >
     <a href='/users/<%= user._id %>'><h2><%= user.name %></h2></a>
+
+    <section>
+        <h3>Total Results: <%= breakdownTotal %> </h3>
+
+        <div>
+            <h3>Result Breakdown:</h3>
+
+            <h5>1 Mile: <%= breakdownMile.quantity %> </h5>
+            <h5>5k: <%= breakdown5k.quantity %> </h5>
+            <h5>10k: <%= breakdown10k.quantity %></h5>
+            <h5>Half-Marathon: <%= breakdownHalf.quantity %></h5>
+            <h5>Marathon: <%= breakdownMarathon.quantity %></h5>
+            
+        </div>
+    </section>
+
 </div>

@@ -44,7 +44,10 @@ function show(req, res) {
     Result.findById(req.params.id)
         .populate('runner')
         .exec(function(err, result) {
-            res.render('results/show', { title: 'Show Result', result });
+            Result.find({})
+            .then(function(results){
+                res.render('results/show', { title: 'Show Result', result, results });
+            })
             }
         );
 }
@@ -79,17 +82,3 @@ function deleteResult(req, res) {
         return next(err);
     })
 }
-
-// function deleteResult(req, res) {
-//     Result.findById(req.params.id)
-//     .then(function(result){
-//         if (!result) return res.redirect('/results/index');
-//         console.log(result)
-//         req.user.results.remove(req.params.id);
-//             req.user.save().then(function(){
-//                 res.redirect('/users/:id');
-//             })
-//     }).catch(function(err){
-//         return next(err);
-//     })
-// }

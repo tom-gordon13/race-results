@@ -60,7 +60,7 @@ nav {
   position: fixed; /* Set the navbar to fixed position */
   top: 0; /* Position the navbar at the top of the page */
   width: 100%; /* Full width */
-  /* margin-bottom: 10px; */
+
   z-index: 9;
   margin-left: 0;
 }
@@ -90,15 +90,7 @@ h1 {
 }
 
 #nav-right > a:hover {
-  /* color: rgb(152, 4, 245); */
   text-shadow: 0 1px 1px #7b00ff;
-  /* color: var(--main-purple); */
-  /* -webkit-box-shadow: 0 0 10px var(--main-purple); */
-  /* box-shadow: 0 0 10px var(--main-purple); */
-}
-
-.login {
-
 }
 
 form {
@@ -589,6 +581,11 @@ section > h4 {
 .left-menu > a {
   color: var(--main-purple);
   text-decoration: none;
+}
+
+.left-menu > section:nth-of-type(1) {
+  border-top: 1px gray solid;
+  width: 80%;
 }
 
 
