@@ -37,22 +37,18 @@ function create(req, res) {
   }
 
   function edit(req, res) {
-    console.log('hihihi edit')
+    console.log(req.params.id)
     Result.findOne({'exComments._id': req.params.id, 'exComments.user': req.user._id})
     .then(function(result){
+      
       if (!result) return res.redirect('/results/index');
-      result.exComments.updateOne({'_id': req.params.id}, {
-        $set: {
-          text: req.body.text
-        }
-      })
-      .then(function(comment){
-        
-        
+      let comment = result.exComments.id(req.params.id);
+      // result.exComments.findById(req.params.id);
+        comment.text = req.body.text;
         result.save(function(err){
-          res.redirect(`/results/${req.params.id}`)
+          res.redirect(`/results/${result._id}`)
         })
       })
-  })
-  }  
+  }
+   
 
