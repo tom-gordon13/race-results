@@ -10,35 +10,12 @@ module.exports = {
     delete: deleteResult
 }
 
-// ORIGINAL INDEX FUNCTION BEFORE REFACTOR
 function index(req, res) {
     Result.find({}).populate('runner')
     .exec(function(err, results){  
         res.render('results/index', {results});
         })
 }
-
-// function index(req, res) {
-//     User.find({})
-//     .then(function(users){
-//         let results 
-//     })  
-//         res.render('results/index', {runners});
-//         })
-// }
-
-
-
-// function deleteResult(req, res) {
-//     User.findOne({'results._id': req.params.id, 'results.user': req.user._id})
-//     .then(function(result){
-//         if (!result) return res.redirect('/results/index');
-//         req.user.results.remove(req.params.id)
-//         req.user.save().then(function(){
-//             res.redirect('/results/index')
-//         })
-//     })
-// }
 
 function show(req, res) {
     Result.findById(req.params.id)

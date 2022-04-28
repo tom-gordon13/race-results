@@ -12,7 +12,7 @@ let raceArr = [breakdownMile, breakdown5k, breakdown10k, breakdownHalf, breakdow
 
 <% 
 results.forEach(result => {
-    if (result.runner._id.equals(user._id)) {
+    if (result.runner._id.equals(runner._id)) {
         breakdownTotal++;
         raceArr.forEach(race => {
             if (race.distance === result.distance.trim()) race.quantity++;
@@ -23,9 +23,9 @@ results.forEach(result => {
 %> 
 
 
-<div class='left-menu'>
-    <img src='<%= user.avatar %> ' >
-    <a href='/users/<%= user._id %>'><h2><%= user.name %> Summary</h2></a>
+<div class='right-menu'>
+    <img src='<%= runner.avatar %> ' >
+    <a href='/users/<%= runner._id %>'><h2><%= runner.name %> Summary</h2></a>
 
     <section>
         <h3>Total Results: <%= breakdownTotal %> </h3>
