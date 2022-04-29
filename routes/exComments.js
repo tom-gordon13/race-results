@@ -5,10 +5,10 @@ const exCommentsCtrl = require('../controllers/exComments');
 const isLoggedIn = require('../config/auth');
 
 
-router.post('/results/:id/comments', exCommentsCtrl.create);
+router.post('/results/:id/comments', isLoggedIn, exCommentsCtrl.create);
 
-router.delete('/comments/:id', exCommentsCtrl.delete);
+router.delete('/comments/:id', isLoggedIn, exCommentsCtrl.delete);
 
-router.put('/comments/:id', exCommentsCtrl.edit);
+router.put('/comments/:id', isLoggedIn, exCommentsCtrl.edit);
 
 module.exports = router;

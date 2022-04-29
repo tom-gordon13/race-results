@@ -11,7 +11,7 @@
 </div>
 
 <h1>Game Description</h1>
-<a href='https://keppa-sei.herokuapp.com/'>Click here to try out the app!</a>
+<a href='https://keppa-sei.herokuapp.com/' target='_blank'>Click here to try out the app!</a>
 <br>
 <br>
 <p>Keppa is a MEN-stack web application that allows runners to upload and track results from various races. It builds off of the popularity of apps such as Strava, which bring a social media element to working out and competing so you can always stay connected.</p>
@@ -101,3 +101,4 @@
 
 - [ ] Add the ability to enter additional profile information
 
+- [ ] Expand application to include/filter for multiple race disciplines (i.e. triathlons, open water races, bike races, etc.)
