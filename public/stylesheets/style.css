@@ -18,7 +18,6 @@ body {
   margin-top: 5vmax;
   display: grid;
   grid-template-columns: 1fr 2fr;
-  /* background-color: red; */
   height: 100%;
 }
 
@@ -27,7 +26,6 @@ body {
   display: flex;
   justify-content: center;
   align-items: center;
-  /* margin-left: 5%; */
 }
 
 a {
@@ -57,10 +55,9 @@ nav {
   justify-content: space-between;
   align-items: center;
   overflow: hidden;
-  position: fixed; /* Set the navbar to fixed position */
-  top: 0; /* Position the navbar at the top of the page */
-  width: 100%; /* Full width */
-
+  position: fixed; 
+  top: 0; 
+  width: 100%;
   z-index: 9;
   margin-left: 0;
 }
@@ -78,7 +75,6 @@ h1 {
   font-size: 350%;
   font-weight: 700;
   color: var(--main-purple);
-  /* text-decoration: none; */
 }
 
 #nav-right > a{
@@ -139,9 +135,18 @@ form > label, div {
   flex-direction: column;
   align-items: center;
   width: 80%;
+  height: auto;
   margin-left: 10%;
   -webkit-box-shadow: 0 0 10px var(--main-purple);
     box-shadow: 0 0 10px var(--main-purple);
+}
+
+.right-menu > section {
+  align-self: center;
+}
+
+.right-menu > a:nth-of-type(1) {
+border-bottom: 2px solid gray;
 }
 
 .right-menu > img {
@@ -183,7 +188,6 @@ form > label, div {
   align-items: center;
   align-self: flex-end;
   width: 80%;
-  /* margin-right: 10%; */
   padding: 40px;
   -webkit-box-shadow: 0 0 10px var(--main-purple);
     box-shadow: 0 0 10px var(--main-purple);
@@ -191,9 +195,6 @@ form > label, div {
 
 .right-body {
   grid-row: 1fr 10fr;
-  /* display: flex;
-  flex-direction: column;
-  flex-wrap: wrap; */
 }
 
 .right-body > h1 {
@@ -294,8 +295,6 @@ background-color: var(--delete-red);
   width: 120px;
   grid-area: avatar;
   align-self: center;
-  /* grid-row: 1 / span 1; */
-  /* grid-column: 1 / span 1;  */
 }
 
 section > h2, h5 {
@@ -352,10 +351,15 @@ section > h4 {
   border: none;
 }
 
-.result-show-contentResult > h3{
-  margin-right: 50px;
-  margin-left: 15px;
+.result-show-contentResult > div{
+  display: flex;
+  
+}
+
+.result-show-contentResult > div > h3{
   border: none;
+  margin-left: 10px;
+  margin-right: 50px;
 }
 
 .result-display-showResult > div:nth-of-type(3) {
@@ -443,6 +447,7 @@ section > h4 {
   display: flex;
   flex-direction: column;
   justify-content: flex-start;
+  
 }
 
 .edit-submit {
@@ -452,8 +457,9 @@ section > h4 {
 .comment-text {
   border: none;
   background-color: rgb(239, 232, 232);
-  height: 100px;
-  width: 250px;
+  height: auto;
+  width: auto;
+  font-size: larger;
 }
 
 .edit-cmt-btn {
@@ -462,7 +468,10 @@ section > h4 {
   background-color: white;
   height: 30%;
   width: 99%;
+  grid-column: 2 / span 1;
+  grid-row: 1 / span 1;
   margin-top: 80px;
+  margin-bottom: 10px;
 }
 
 .edit-cmt-btn:hover {
@@ -475,14 +484,19 @@ section > h4 {
   font-family: 'Play', sans-serif;
   font-size: large;
   grid-column: 2 / span 1;
+  grid-row: 1 / span 1;
   border: none;
+  margin-bottom: 100%;
+  width: 90%;
+  height: 30%;
 }
 
 .delete-cmt-btn > button {
   font-family: 'Play', sans-serif;
   font-size: large;
   background-color: white;
-  margin-left: 50px;
+  margin-left: 10px;
+  width: 100%
 }
 
 .delete-cmt-btn > button:hover {
@@ -512,12 +526,10 @@ section > h4 {
   grid-column: 1 / span 2;
   display: flex;
   width: 98%;
-  /* justify-content: space-around; */
 }
 
 #race-name {
   width: 70%;
-  /* margin-right: 50px;  */
 }
 
 #race-name > input {
@@ -590,7 +602,6 @@ section > h4 {
         box-shadow: 0 0 10px #fff;
 }
 
-
 /* FIXED LEFT MENU */
 
 .left-menu {
@@ -618,15 +629,11 @@ section > h4 {
   width: 80%;
 }
 
-
-
 /* USER SHOW PAGE */
 .show-header{
   width: 98%;
   height: 14vmax;
-  /* background-color: var(--second-purple); */
   background-image: linear-gradient(to right, var(--second-purple), white);
-  /* background-color: linear-gradient(45deg, blue, red); */
   grid-column: 1 / span 2;
   grid-row: 1 / span 2;
   position: relative;

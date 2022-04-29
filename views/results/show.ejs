@@ -1,6 +1,6 @@
 <%- include('../partials/header-result-show.ejs') -%> 
-<%- include('../partials/fixed-left-menu.ejs') -%>
 
+<%- include('../partials/fixed-left-menu.ejs') -%>
 
 <div class='right-body'>
     <section class='result-display-showResult'>
@@ -18,21 +18,17 @@
                 <%= `${Math.floor(paceSec/60)}:${Math.floor(paceSec % 60)}` %> 
             </h3>
             
-            <h5>Place:  </h5><h3><%= result.place ? result.place : 'N/A'%></h3>
-            <h5>Focus:  </h5><h3><%= result.focus %></h3>
-            <h5>Comments:  </h5><h3><%= result.comments %></h3>
+            <div>
+                <h5>Place:  </h5><h3><%= result.place ? result.place : 'N/A'%></h3>
+                <h5>Focus:  </h5><h3><%= result.focus %></h3>
+                <h5>Comments:  </h5><h3><%= result.comments %></h3>
+            </div>
         </div>
-
-        
-        
 
         <div id='show-img'>
             <%- (result.resultImage) ? `<img src=${result.resultImage}>` : `<div id='placeholder-photo'>No Image Added</div>` %>
         </div>
         
-        
-
-
         <section class='show-exComments'>
             <% if (result.exComments.length) { %> 
                 <% result.exComments.forEach(comment => { %> 
@@ -57,17 +53,12 @@
                 <% }) %> 
             <% } %>
 
-            
-
-
         </section>
 
         <form action='/results/<%= result._id%>/comments' id='comment-form' method='post'>Add a New Comment:
             <textarea name='text'></textarea>
             <button type='submit'>Submit Comment</button>
         </form>
-
-       
 
     </section>
 

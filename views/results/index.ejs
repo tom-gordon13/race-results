@@ -1,15 +1,10 @@
 <%- include('../partials/header.ejs') -%> 
 
-
-
 <%- include('../partials/fixed-left-menu.ejs', {results}) -%> 
-
-
 
 <div class='right-body'>
     <h1>Race Results</h1>
     <div id='all-results'>
-    <!-- <div id='resultList'> -->
     
         <% results.forEach(result => { %> 
         <section class='result-display-index'>
@@ -17,15 +12,13 @@
             <img src='<%= result.runner.avatar %>' alt='avatar' class='result-avatar'>
             </div>
             <div>
-                <h2><%= result.runner.name %></h2>
+                <a href='/users/<%= result.runner._id %>' id='result-show-name'><h2 ><%= result.runner.name %> </h2></a>
                 <h5> <%=  (result.resultDate) ? result.resultDate.toLocaleDateString() : 'No Date Given' %></h5>
             </div>
             <div>
                 <h5>Race: </h5><h3><%= result.raceName %></h3>
                 <h5>Distance: </h5><h3><%= result.distance %></h3>
                 <h5>Finishing Time: </h5><h3><%= result.finishTime %></h3>
-                
-                
                 
                 <form action='/results/<%= result.id %>' id='see-more-form'>
                     <button type='submit'>See More</button>
@@ -44,7 +37,6 @@
         </section>
     <% }) %> 
 
-<!-- </div> -->
 </div>   
 </div>
 

@@ -10,7 +10,7 @@
    <h1></h1>
 </div>
 
-<h1>Game Description</h1>
+<h1>App Description</h1>
 <a href='https://keppa-sei.herokuapp.com/' target='_blank'>Click here to try out the app!</a>
 <br>
 <br>
@@ -84,6 +84,10 @@
 ![Trello](https://img.shields.io/badge/-Trello-333?style=flat&logo=trello) 
 ![Heroku](https://img.shields.io/badge/-Heroku-333?style=flat&logo=heroku)
 ![VSCode](https://img.shields.io/badge/-VS_Code-333?style=flat&logo=visualstudio)
+
+
+
+<a href='https://trello.com/b/WM3kQyjG/project-2-board' target='_blank'>Click here for the original Keppa Trello board!</a>
 
 <br>
 
