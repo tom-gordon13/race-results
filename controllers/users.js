@@ -18,12 +18,4 @@ function show(req, res) {
     })
 }
 
-// function show(req, res) {
-//     User.findById(req.params.id).then(function(user){
-//         Result.find({user})
-//     }) 
-//             res.render('users/show', {user, results});
-//         })
-//     }
-//     )}
 

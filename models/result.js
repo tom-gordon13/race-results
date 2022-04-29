@@ -13,8 +13,6 @@ const exCommentsSchema = new Schema({
 
 const resultsSchema = new Schema({
     runner: {type: Schema.Types.ObjectId, ref: 'User', required: true},
-    // runnerName: {type: String, required: true},
-    // race: {type: Schema.Types.ObjectId},
     raceName: {
         type: String,
         required: false 
@@ -45,6 +43,4 @@ const resultsSchema = new Schema({
     timestamps: true
   })
 
-
-// module.exports = mongoose.model('ExComment', exCommentsSchema);
 module.exports = mongoose.model('Result', resultsSchema);
