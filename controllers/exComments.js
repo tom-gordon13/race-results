@@ -1,6 +1,5 @@
 const Result = require('../models/result');
 const User = require('../models/user');
-// const ExComment = require('../models/exComments');
 
 module.exports = {
     create, 
